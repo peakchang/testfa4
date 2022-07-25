@@ -2,9 +2,11 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN git clone https://github.com/peakchang/test_fa1.git
+RUN echo '232233'
 
-WORKDIR /home/test_fa1
+RUN git clone https://github.com/peakchang/testfa4.git
+
+WORKDIR /home/testfa4
 
 RUN pip install -r requirements.txt
 
