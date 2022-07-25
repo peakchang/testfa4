@@ -5,7 +5,7 @@ app = {
     'name': 'mysql+pymysql',
     'user': 'root',
     'password': 'rkwkrh13!#',
-    'host': 'localhost',
+    'host': 'mariadb',
     'dbconn': 'example',
     'port': '3306'
 }
