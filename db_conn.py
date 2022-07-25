@@ -1,17 +1,21 @@
 from sqlalchemy import *
 from sqlalchemy.orm import sessionmaker
 
-app = {
-    'name': 'mysql+pymysql',
-    'user': 'root',
-    'password': 'rkwkrh13!#',
-    'host': 'mariadb',
-    'dbconn': 'example',
-    'port': '3306'
-}
+# app = {
+#     'name': 'mysql+pymysql',
+#     'user': 'root',
+#     'password': 'rkwkrh13!#',
+#     'host': 'mariadb',
+#     'dbconn': 'example',
+#     'port': '3306'
+# }
+#
+# conn_string = f'{app["name"]}://{app["user"]}:{app["password"]}@{app["host"]}:{app["port"]}/{app["dbconn"]}'
 
-conn_string = f'{app["name"]}://{app["user"]}:{app["password"]}@{app["host"]}:{app["port"]}/{app["dbconn"]}'
 
+conn_string = "mysql+pymysql://root:1313@mariadb:3306/test_db"
+# conn_string = "mysql+pymysql://root:rkwkrh13!#@mariadb:3306/example"
+# conn_string = "mysql+pymysql://root:rkwkrh13!#@localhost:3306/example"
 
 class engineconn:
     def __init__(self):
