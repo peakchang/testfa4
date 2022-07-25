@@ -22,4 +22,7 @@ async def first_get():
 
 @app.post("/post")
 async def first_post(item: Item):
+    addMemo = Test(name=item.name, number=item.number)
+    session.add(addMemo)
+    session.commit()
     return item
