@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo '23122233'
+RUN echo '23'
 
 RUN git clone https://github.com/peakchang/testfa4.git
 
@@ -12,6 +12,7 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8080
 
-#CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["bash", "-c", "gunicorn main:app --worker-class=uvicorn.workers.UvicornWorker --workers=5 --threads=3 --bind 0.0.0.0:8080 --daemon"]
 
-CMD ["gunicorn", "main:app", "--workers", "4", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8080"]
+CMD ["gunicorn", "--preload", "-c", "gunicorn.conf.py", "main:app"]
+
